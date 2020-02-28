@@ -53,7 +53,7 @@ function getConcert() {
         .get(
           "https://rest.bandsintown.com/artists/" +
             data.artist +
-            "/events?app_id=codingbootcaymp"
+            "/events?app_id=codingbootcamp"
         )
         .then(function(data) {
           if (!data) {
@@ -97,9 +97,9 @@ function getSong() {
     .then(function(data) {
       let song = data.song;
       
-      const spotify = new Spotify(spotKey.spotify);
+      if (song === "") song = "Stan";
       
-      if (song === "") song = "One more time";
+      const spotify = new Spotify(spotKey.spotify);
 
 
       spotify
